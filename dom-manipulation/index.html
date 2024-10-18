@@ -4,23 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
+  <style>
+    /* Basic styling for better layout */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #quoteDisplay {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 1em;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
+
+  <!-- Display the random quote -->
   <div id="quoteDisplay">No quotes available.</div>
   <button id="newQuote">Show New Quote</button>
 
+  <hr>
+
+  <!-- Input fields for adding a new quote -->
   <div>
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button onclick="addQuote()">Add Quote</button>
+    <button id="addQuoteButton">Add Quote</button> <!-- Moved onclick to JS -->
   </div>
 
   <hr>
-  
-  <button onclick="exportToJsonFile()">Export Quotes as JSON</button>
-  <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
 
+  <!-- Buttons for exporting/importing quotes -->
+  <button id="exportJson">Export Quotes as JSON</button> <!-- Moved onclick to JS -->
+  <input type="file" id="importFile" accept=".json" />
+
+  <!-- Link to the JavaScript file -->
   <script src="script.js"></script>
+
+  <script>
+    // Attach event listeners for the buttons in JavaScript for cleaner code
+    document.getElementById('addQuoteButton').addEventListener('click', addQuote);
+    document.getElementById('exportJson').addEventListener('click', exportToJsonFile);
+    document.getElementById('importFile').addEventListener('change', importFromJsonFile);
+  </script>
 </body>
 </html>
