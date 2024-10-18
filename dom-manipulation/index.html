@@ -1,59 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Quote Generator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f4f4f9;
-    }
-    h1 {
-      text-align: center;
-    }
-    #quoteDisplay {
-      font-size: 1.5em;
-      margin: 20px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-    input, button {
-      padding: 10px;
-      margin: 5px;
-      font-size: 1em;
-    }
-    .button-container {
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Quote Generator</title>
 </head>
 <body>
-  <h1>Dynamic Quote Generator</h1>
-  
-  <!-- Section to display random quotes -->
-  <div id="quoteDisplay">No quotes available.</div>
-  <button id="showNewQuote">Show New Quote</button>
-
-  <!-- Section to add new quotes -->
-  <div>
+    <h1>Dynamic Quote Generator</h1>
+    <div id="quoteDisplay"></div>
+    <button id="newQuote">Show New Quote</button>
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuoteButton">Add Quote</button>
-  </div>
-
-  <hr>
-
-  <!-- Export/Import buttons for JSON -->
-  <div class="button-container">
-    <button id="exportQuotes">Export Quotes as JSON</button>
+    <button id="addQuote">Add Quote</button>
+    <button id="exportQuotes">Export Quotes to JSON</button>
     <input type="file" id="importFile" accept=".json" />
-  </div>
-
-  <!-- Include the JavaScript file -->
-  <script src="script.js"></script>
+    <select id="categoryFilter">
+        <option value="all">All Categories</option>
+    </select>
+    <div id="notification" style="display:none;"></div>
+    <script src="script.js"></script>
 </body>
 </html>
