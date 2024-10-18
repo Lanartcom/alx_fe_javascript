@@ -5,57 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
   <style>
-    /* Basic styling for better layout */
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      text-align: center;
     }
     #quoteDisplay {
       font-size: 1.5em;
-      margin-bottom: 20px;
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
     }
-    input {
+    input, button {
+      padding: 10px;
       margin: 5px;
-      padding: 8px;
       font-size: 1em;
     }
-    button {
-      margin: 5px;
-      padding: 10px 15px;
-      font-size: 1em;
+    .button-container {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
-
-  <!-- Display the random quote -->
+  
+  <!-- Section to display random quotes -->
   <div id="quoteDisplay">No quotes available.</div>
-  <button id="newQuote">Show New Quote</button>
+  <button id="showNewQuote">Show New Quote</button>
 
-  <hr>
-
-  <!-- Input fields for adding a new quote -->
+  <!-- Section to add new quotes -->
   <div>
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuoteButton">Add Quote</button> <!-- Moved onclick to JS -->
+    <button id="addQuoteButton">Add Quote</button>
   </div>
 
   <hr>
 
-  <!-- Buttons for exporting/importing quotes -->
-  <button id="exportJson">Export Quotes as JSON</button> <!-- Moved onclick to JS -->
-  <input type="file" id="importFile" accept=".json" />
+  <!-- Export/Import buttons for JSON -->
+  <div class="button-container">
+    <button id="exportQuotes">Export Quotes as JSON</button>
+    <input type="file" id="importFile" accept=".json" />
+  </div>
 
-  <!-- Link to the JavaScript file -->
+  <!-- Include the JavaScript file -->
   <script src="script.js"></script>
-
-  <script>
-    // Attach event listeners for the buttons in JavaScript for cleaner code
-    document.getElementById('addQuoteButton').addEventListener('click', addQuote);
-    document.getElementById('exportJson').addEventListener('click', exportToJsonFile);
-    document.getElementById('importFile').addEventListener('change', importFromJsonFile);
-  </script>
 </body>
 </html>
